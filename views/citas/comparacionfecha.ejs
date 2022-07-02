@@ -1,0 +1,24 @@
+<%- include ../layouts/cabecera.ejs %> 
+
+    <div class = 'container mt-4'>
+        <h1>Comparación</h1>
+        <div class="card border-secondary">
+            <div class="card-header">Comparar por Fecha</div>
+            <div class="card-body">
+                <form action="/citas/resultados2" method="POST">
+                    <div class="mb-3">
+                        <label for="fecha1" class="form-label">Fecha 1</label>
+                        <input type="date" name="fecha1" id="fecha1" class="form-control" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha2" class="form-label">Fecha 2</label>
+                        <input type="date" name="fecha2" id="fecha2" class="form-control" tabindex="2">
+                    </div>
+                    <button type="submit" class="btn btn-primary" tabindex="3">Comparar</button>
+                    
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <%- include ../layouts/pie.ejs %> 

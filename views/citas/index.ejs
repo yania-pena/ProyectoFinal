@@ -1,0 +1,46 @@
+<%- include ../layouts/cabecera.ejs %> 
+        <br/>
+        <br/>
+        <a href="/citas/crear" class="btn btn-primary" type="button">Crear una nueva cita médica</a>
+        <br/>
+        <br/>
+        
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Pago</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let cita = 0; cita < citas.length; cita++ ) { %>
+                    <tr>
+                        <td> <%=citas[cita].id %>  </td>
+    
+                        <td> <%=citas[cita].nombre %> </td>
+                        <td> <%=citas[cita].fecha %> </td>
+                        <td> <%=citas[cita].hora %> </td>
+                        <td> <%=citas[cita].pago %> </td>
+
+                        <td> 
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="get" action="/citas/editar/<%=citas[cita].id %>">
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                            </div>
+                            | 
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline"  method="post" action="/citas/eliminar/<%=citas[cita].id_ficha %>" >
+                                 <button class="btn btn-danger" type="submit">Borrar</button>
+                            </form>
+                            </div>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <%- include ../layouts/pie.ejs %> 
