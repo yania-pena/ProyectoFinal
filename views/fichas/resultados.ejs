@@ -1,0 +1,32 @@
+<%- include ../layouts/cabecera.ejs %> 
+
+    <div class = 'container mt-4'>
+        <h1>Resultados</h1>
+        <div class="card border-secondary">
+            <div class="card-body">
+                <table id="resultados" class="table table-bordered table-striped text-center mt-5">
+                    <thead>
+                        <tr class="bg-dark text-white">
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Medicamento</th>
+                            <th scope="col">Motivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% datos.forEach((horarios) => { %> 
+                        <tr>
+                            <td><%= horarios.nombre %></td>
+                            <td><%= horarios.edad%></td>
+                            <td><%= horarios.medicamento %></td>
+                            <td><%= horarios.motivo %></td>
+                        </tr>
+                        <% }) %> 
+                    </tbody>
+                </table>
+                <a class="btn btn-primary" href="http:/horarios/comparacion/">Atrás</a>
+            </div>
+        </div>
+        
+    </div>
+    <%- include ../layouts/pie.ejs %> 

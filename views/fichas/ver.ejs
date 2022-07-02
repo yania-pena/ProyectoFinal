@@ -1,0 +1,83 @@
+<%- include ../layouts/cabecera.ejs %> 
+<br/>
+<br/>
+<div class="card">
+    <div class="card-header">
+        Ficha Médica 
+    </div>
+    <div class="card-body">
+        <p class="card-text">
+            <form method="post" action="../ver/" enctype="multipart/form-data">
+    
+                <input type="hidden" name="id" value="<%=fichas.id_ficha %>">
+                
+                
+                    <div class="form-group">
+                        <label for="my-input">Nombre Completo</label>
+                        <input id="my-input" value="<%=fichas.nombre%>" class="form-control" type="text" name="nombre" readonly="readonly">
+                    </div>
+                    <div class="form-group">
+                        <label for="my-input">Fecha de Nacimiento</label>
+                        <input id="my-input" value="<%=fichas.fecha_nacimiento%>" class="form-control" type="datetime" name="fecha_nacimiento" readonly="readonly">
+                    </div>
+                    <div class="form-group">
+                        <label for="my-input">Edad</label>
+                        <input id="my-input" value="<%=fichas.edad%>" class="form-control" type="text" name="edad" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Género</label>
+                        <input id="my-input" value="<%=fichas.genero%>" class="form-control" type="text" name="genero" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Cédula</label>
+                        <input id="number"  value="<%=fichas.cedula%>" class="form-control" type="number" maxlength="10" name="cedula" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Ciudad</label>
+                        <input id="my-input" value="<%=fichas.ciudad%>" class="form-control" type="text" name="ciudad" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Dirección</label>
+                        <input id="my-input"  value="<%=fichas.direccion%>" class="form-control" type="text" name="direccion" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Teléfono</label>
+                        <input id="number"  value="<%=fichas.telefono%>" class="form-control" type="number" maxlength="10" name="telefono" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Antecedentes</label>
+                        <input id="my-input"  value="<%=fichas.antecedentes%>" class="form-control" type="text" name="antecedentes" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Patologías</label>
+                        <input id="my-input"  value="<%=fichas.patologias%>" class="form-control" type="text" name="patologias" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Alergias</label>
+                        <input id="my-input"  value="<%=fichas.alergias%>" class="form-control" type="text" name="alergias" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Estatura (cm)</label>
+                        <input id="number" value="<%=fichas.estatura%>" class="form-control" type="number" step="0.01" maxlength="5" name="estatura" readonly="readonly">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="my-input">Peso (kg)</label>
+                        <input id="number"  value="<%=fichas.peso%>" class="form-control" type="number" step="0.01" maxlength="5" name="peso" readonly="readonly">
+                    </div>
+                    <a class="btn btn-primary" href="http:/ficha">Atrás</a>
+                </form>
+        </p>
+    </div>
+</div>
+
+<%- include ../layouts/pie.ejs %> 

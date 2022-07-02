@@ -1,0 +1,63 @@
+<%- include ../layouts/cabecera.ejs %> 
+        <br/>
+        <br/>
+        <a href="/ficha/crear" class="btn btn-primary" type="button">Crear una nueva ficha médica</a>
+        <br/>
+        <br/>
+        <form action="/ficha/buscar" method="POST">
+            <div class="mb-3">
+                <label for="nombre1" class="form-label">Buscar por Nombre</label>
+                <input type="text" name="nombre1" id="nombre1" class="form-control" tabindex="1">
+            </div>
+            <button type="submit" class="btn btn-primary" tabindex="2">Buscar</button>
+            <br/>
+        <br/>
+        </form>
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Peso</th>
+                    <th>Estatura</th>
+                    <th>Acciones</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let ficha = 0; ficha < fichas.length; ficha++ ) { %>
+                    <tr>
+                        <td> <%=fichas[ficha].id_ficha %>  </td>
+    
+                        <td> <%=fichas[ficha].nombre %> </td>
+                        <td> <%=fichas[ficha].edad %> </td>
+                        <td> <%=fichas[ficha].peso %> </td>
+                        <td> <%=fichas[ficha].estatura%> </td>
+                        
+                        <td> 
+                            
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <form class="form-inline" method="post" action="/ficha/ver/<%=fichas[ficha].id_ficha %>">
+                                    <button class="btn btn-success" type="submit">Ver</button>
+                                </form>
+                            </div>
+                            |
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="get" action="/ficha/editar/<%=fichas[ficha].id_ficha %>">
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                            </div>
+                            | 
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <form class="form-inline" method="post" action="/ficha/eliminar/<%=fichas[ficha].id_ficha %>">
+                                    <button class="btn btn-danger" type="submit">Borrar</button>
+                                </form>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <%- include ../layouts/pie.ejs %> 

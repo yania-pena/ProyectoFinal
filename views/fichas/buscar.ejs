@@ -1,0 +1,56 @@
+<%- include ../layouts/cabecera.ejs %> 
+
+    <div class = 'container mt-4'>
+        <h1>Resultados</h1>
+        <div class="card border-secondary">
+            <div class="card-body">
+                <table id="buscar" class="table table-bordered table-striped text-center mt-5">
+                    <thead>
+                        <tr class="bg-dark text-white">
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Estatura</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% datos.forEach((ficha) => { %> 
+                        <tr>
+                            <td><%= ficha.id_ficha %></td>
+                            <td><%= ficha.nombre %></td>
+                            <td><%= ficha.edad%></td>
+                            <td><%= ficha.peso %></td>
+                            <td><%= ficha.estatura %></td>
+                            <td> 
+                            
+                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                    <form class="form-inline" method="post" action="/ficha/ver/<%=ficha.id_ficha %>">
+                                        <button class="btn btn-success" type="submit">Ver</button>
+                                    </form>
+                                </div>
+                                |
+                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <form class="form-inline" method="get" action="/ficha/editar/<%=ficha.id_ficha %>">
+                                    <button class="btn btn-warning" type="submit">Editar</button>
+                                </form>
+                                </div>
+                                | 
+                                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                    <form class="form-inline" method="post" action="/ficha/eliminar/<%=ficha.id_ficha %>">
+                                        <button class="btn btn-danger" type="submit">Borrar</button>
+                                    </form>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <% }) %> 
+                    </tbody>
+                </table>
+                <a class="btn btn-primary" href="http:/ficha">Atrás</a>
+            </div>
+        </div>
+        
+    </div>
+    <%- include ../layouts/pie.ejs %> 

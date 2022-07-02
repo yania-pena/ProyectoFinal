@@ -1,0 +1,71 @@
+<%- include ../layouts/cabecera.ejs %> 
+<br/><br/>
+<div class="card">
+    <div class="card-header">
+        Formulario de Creación de Ficha Médica
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Datos del Paciente</h5>
+        <p class="card-text"></p>
+        <form action="/ficha/guardar" method="post"> 
+            <div class="form-group">
+                <label for="my-input">Nombre</label>
+                <input id="my-input" class="form-control" type="text" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Fecha de Nacimiento</label>
+                <input id="my-input" class="form-control" type="date" name="fecha_nacimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Edad</label>
+                <input id="my-input" class="form-control" type="text" name="edad" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Género</label>
+                <input id="my-input" class="form-control" type="text" name="genero" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Cédula</label>
+                <input id="number" class="form-control" type="number" name="cedula" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Ciudad</label>
+                <input id="my-input" class="form-control" type="text" name="ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Dirección</label>
+                <input id="my-input" class="form-control" type="text" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Teléfono</label>
+                <input id="number" class="form-control" type="number" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Antecedentes</label>
+                <input id="my-input" class="form-control" type="text" name="antecedentes" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Patologías</label>
+                <input id="my-input" class="form-control" type="text" name="patologias" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Alergias</label>
+                <input id="my-input" class="form-control" type="text" name="alergias" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Estatura (m)</label>
+                <input id="number" class="form-control" step="0.01" type="number" name="estatura" required>
+            </div>
+            <div class="form-group">
+                <label for="my-input">Peso (kg)</label>
+                <input id="number" class="form-control" step="0.01" type="number" name="peso" required>
+            </div>
+            
+        
+            <button class="btn btn-success" type="submit" >Guardar</button>
+            <a class="btn btn-primary" href="http:/ficha">Cancelar</a>
+        </form>
+    </div>
+</div>
+
+<%- include ../layouts/pie.ejs %> 
