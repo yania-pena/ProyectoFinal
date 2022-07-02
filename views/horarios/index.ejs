@@ -1,0 +1,46 @@
+<%- include ../layouts/cabecera.ejs %> 
+        <br/>
+        <br/>
+        <a href="/horarios/crear" class="btn btn-primary" type="button">Crear un nuevo horario de medicamentos</a>
+        <br/>
+        <br/>
+        
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Medicamento</th>
+                    <th>Dosis</th>
+                    <th>Motivo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let horario = 0; horario < horarios.length; horario++ ) { %>
+                    <tr>
+                        <td> <%=horarios[horario].id_horario %>  </td>
+    
+                        <td> <%=horarios[horario].nombre %> </td>
+                        <td> <%=horarios[horario].medicamento %> </td>
+                        <td> <%=horarios[horario].dosis %> </td>
+                        <td> <%=horarios[horario].motivo %> </td>
+
+                        <td> 
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                            <form class="form-inline" method="get" action="/horarios/editar/<%=horarios[horario].id_horario %>">
+                                <button class="btn btn-warning" type="submit">Editar</button>
+                            </form>
+                            </div>
+                            | 
+                            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                                <form class="form-inline"  method="post" action="/horarios/eliminar/<%=horarios[horario].id_horario %>" >
+                                     <button class="btn btn-danger" type="submit">Borrar</button>
+                                </form>
+                                </div>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        <%- include ../layouts/pie.ejs %> 

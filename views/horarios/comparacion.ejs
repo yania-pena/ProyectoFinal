@@ -1,0 +1,25 @@
+<%- include ../layouts/cabecera.ejs %> 
+
+    <div class = 'container mt-4'>
+        <h1>Comparación</h1>
+        <div class="card border-secondary">
+            <div class="card-header">Comparar por Edad del Paciente</div>
+            <div class="card-body">
+                <form action="/horarios/resultados" method="POST">
+                    <div class="mb-3">
+                        <label for="edad1" class="form-label">Edad 1</label>
+                        <input type="text" name="edad1" id="edad1" class="form-control" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edad2" class="form-label">Edad 2</label>
+                        <input type="text" name="edad2" id="edad2" class="form-control" tabindex="2">
+                    </div>
+                    <button type="submit" class="btn btn-primary" tabindex="3">Comparar</button>
+                    
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>
+    <%- include ../layouts/pie.ejs %> 

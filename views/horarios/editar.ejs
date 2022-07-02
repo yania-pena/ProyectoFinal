@@ -1,0 +1,51 @@
+<%- include ../layouts/cabecera.ejs %> 
+<% if (horarios) { %>
+<br/>
+<br/>
+<div class="card">
+    <div class="card-header">
+        Horario de Medicamentos
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Editar Datos del Horario</h5>
+        <p class="card-text">
+            <form action="/horarios/actualizar" method="POST">
+                <input id="id" name="id" value="<%= horarios.id_horario%>" hidden>
+                
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Usuario</label>
+                    <select name="nombre" id="nombre" class="form-select" tabindex="1">
+                        <option value="<%= horarios.id_ficha %>" selected hidden>
+                            <%= horarios.nombre%>
+                        </option>
+                        <% ficha.forEach((ficha)=> { %>
+                            <option value="<%= ficha.id_ficha %>">
+                                <%= ficha.nombre%>
+                            </option>
+                            <% }) %>
+                    </select>
+                </div>
+                    <div class="form-group">
+                        <label for="medicamento">Medicamento</label>
+                        <input type="text" name="medicamento" id="medicamento" value="<%=horarios.medicamento%>" class="form-control" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="dosis">Dosis</label>
+                        <input  type="text" name="dosis" id="dosis" value="<%=horarios.dosis%>"" class="form-control" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="motivo">Motivo</label>
+                        <input type="text"  name="motivo" id="motivo"  value="<%=horarios.motivo%>" class="form-control" required>
+                    </div>
+        
+                    
+                    <button class="btn btn-success" type="submit">Actualizar</button>
+                    <a class="btn btn-primary" href="http:/horarios">Cancelar</a>
+                </form>
+        </p>
+    </div>
+</div>
+<% } %>
+<%- include ../layouts/pie.ejs %> 
