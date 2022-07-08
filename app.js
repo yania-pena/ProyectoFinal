@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var conexion  = require('./config/conexion');
 
-var indexRouter= require('./routes/index');
+//var indexRouter= require('./routes/index');
 var fichaRouter = require('./routes/fichas');
 var citasRouter = require('./routes/citas');
 var horariosRouter = require('./routes/horarios');
@@ -32,7 +32,7 @@ app.use(session({
 }))
 app.use(flash());
 //app.use(expressValidator());
-app.use('/index',indexRouter);
+//app.use('/index',indexRouter);
 app.use('/ficha',fichaRouter);
 app.use('/citas',citasRouter);
 app.use('/horarios',horariosRouter);
